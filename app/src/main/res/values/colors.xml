@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF4d4d</color>
-    <color name="colorPrimaryDark">#FF4d4d</color>
-    <color name="colorAccent">#FF4d4d</color>
+    <color name="colorPrimary">#e53935</color>
+    <color name="colorPrimaryDark">#e53935</color>
+    <color name="colorAccent">#e53935</color>
 
     <color name="background">#FFFFFF</color>
 
-    <color name="card_divider">#CCE6E6E6</color>
+    <color name="bottom_tab_color_inactive">#5f6368</color>
 
-    <color name="bottom_navigation_color">#FFFFFF</color>
+    <color name="appbar_bottom_tab_color">#FFFFFF</color>
     <color name="divider">#CCE6E6E6</color>
 
-    <color name="text_frame_background">#E6000000</color>
 </resources>
