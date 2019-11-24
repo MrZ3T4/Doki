@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment;
 
 import dev.z3t4.doki.R;
 
-public class MangaFragment extends Fragment {
-
+public class BroadcastFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.host_manga, container, false);
+        View view = inflater.inflate(R.layout.fragment_broadcast, container, false);
+
         return view;
     }
 }

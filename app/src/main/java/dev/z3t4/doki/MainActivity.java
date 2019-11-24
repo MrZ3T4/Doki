@@ -3,20 +3,28 @@ package dev.z3t4.doki;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dev.z3t4.doki.Adapter.MainViewPager;
+import dev.z3t4.doki.ui.AnimeFragment;
+import dev.z3t4.doki.ui.LibraryFragment;
+import dev.z3t4.doki.ui.MangaFragment;
+import dev.z3t4.doki.ui.NewsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.viewpager) ViewPager2 viewPager;
-    @BindView(R.id.bottom_navigation_view) BottomNavigationView bottom_nav_view;
+    @BindView(R.id.bottom_navigation_view) BottomNavigationView bottomNavigationView;
 
-    private MainViewPager mainViewPager = new MainViewPager();
+    private AnimeFragment animeFragment = new AnimeFragment();
+    private MangaFragment mangaFragment = new MangaFragment();
+    private NewsFragment newsFragment = new NewsFragment();
+    private LibraryFragment libraryFragment = new LibraryFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,56 +33,59 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        mainViewPager.setupViewPager(viewPager, getSupportFragmentManager(), getLifecycle());
-        viewPager.registerOnPageChangeCallback(callback);
-
+        changeFragment(animeFragment, AnimeFragment.class.getSimpleName());
         setupBottomNavigationView();
 
     }
 
-    private ViewPager2.OnPageChangeCallback callback = new ViewPager2.OnPageChangeCallback() {
-        @Override
-        public void onPageSelected(int position) {
-            super.onPageSelected(position);
-            switch (position){
-                case 0:
-                    bottom_nav_view.setSelectedItemId(R.id.anime);
-                    break;
-                case 1:
-                    bottom_nav_view.setSelectedItemId(R.id.manga);
-                    break;
-                case 2:
-                    bottom_nav_view.setSelectedItemId(R.id.news);
-                    break;
-                case 3:
-                    bottom_nav_view.setSelectedItemId(R.id.library);
-                    break;
-            }
-        }
-    };
 
     private void setupBottomNavigationView() {
-        bottom_nav_view.setOnNavigationItemSelectedListener(menuItem -> {
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
 
             switch (menuItem.getItemId()){
 
                 case R.id.anime:
-                    viewPager.setCurrentItem(0, true);
+                    changeFragment(animeFragment, AnimeFragment.class.getSimpleName());
                     break;
                 case R.id.manga:
-                    viewPager.setCurrentItem(1, true);
+                    changeFragment(mangaFragment, MangaFragment.class.getSimpleName());
                     break;
                 case R.id.news:
-                    viewPager.setCurrentItem(2, true);
+                    changeFragment(newsFragment, NewsFragment.class.getSimpleName());
                     break;
                 case R.id.library:
-                    viewPager.setCurrentItem(3, true);
+                    changeFragment(libraryFragment, LibraryFragment.class.getSimpleName());
                     break;
 
             }
 
             return true;
         });
+    }
+
+    public void changeFragment(Fragment fragment, String tagFragmentName) {
+
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+
+        Fragment currentFragment = mFragmentManager.getPrimaryNavigationFragment();
+        if (currentFragment != null) {
+            fragmentTransaction.hide(currentFragment);
+        }
+
+        Fragment fragmentTemp = mFragmentManager.findFragmentByTag(tagFragmentName);
+        if (fragmentTemp == null) {
+            fragmentTemp = fragment;
+            fragmentTransaction
+                    .setCustomAnimations(R.anim.alpha_in, R.anim.alpha_out)
+                    .add(R.id.framelayout, fragmentTemp, tagFragmentName);
+        } else {
+            fragmentTransaction.setCustomAnimations(R.anim.alpha_in, R.anim.alpha_out).show(fragmentTemp);
+        }
+
+        fragmentTransaction.setPrimaryNavigationFragment(fragmentTemp);
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.commitNowAllowingStateLoss();
     }
 
 }

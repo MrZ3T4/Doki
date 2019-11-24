@@ -6,6 +6,11 @@
     <string name="menu_news">Noticias</string>
     <string name="menu_library">Biblioteca</string>
 
+    <string name="broadcast">En emisión</string>
+    <string name="history">Mi historial</string>
+    <string name="calendar">Calendario</string>
+    <string name="directory">Directorio</string>
+
     <string name="dot">&#8226;</string>
 
 

@@ -10,30 +10,34 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 
 import dev.z3t4.doki.ui.AnimeFragment;
+import dev.z3t4.doki.ui.BroadcastFragment;
+import dev.z3t4.doki.ui.CalendarFragment;
+import dev.z3t4.doki.ui.DirectoryFragment;
+import dev.z3t4.doki.ui.HistoryFragment;
 import dev.z3t4.doki.ui.LibraryFragment;
 import dev.z3t4.doki.ui.MangaFragment;
 import dev.z3t4.doki.ui.NewsFragment;
 
-public class MainViewPager {
+public class AnimeViewPager {
 
     public void setupViewPager(ViewPager2 viewPager, FragmentManager fm, Lifecycle lifecycle){
-        MainViewPagerAdapter adapter = new MainViewPagerAdapter(fm, lifecycle);
+        AnimeViewPagerAdapter adapter = new AnimeViewPagerAdapter(fm, lifecycle);
 
-        adapter.addFragment(new AnimeFragment());
-        adapter.addFragment(new MangaFragment());
-        adapter.addFragment(new NewsFragment());
-        adapter.addFragment(new LibraryFragment());
+        adapter.addFragment(new BroadcastFragment());
+        adapter.addFragment(new HistoryFragment());
+        adapter.addFragment(new CalendarFragment());
+        adapter.addFragment(new DirectoryFragment());
 
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(4);
 
     }
 
-    public class MainViewPagerAdapter extends FragmentStateAdapter {
+    public class AnimeViewPagerAdapter extends FragmentStateAdapter {
 
         ArrayList<Fragment> fragments = new ArrayList<>();
 
-        MainViewPagerAdapter(FragmentManager fm, Lifecycle lifecycle) {
+        AnimeViewPagerAdapter(FragmentManager fm, Lifecycle lifecycle) {
             super(fm, lifecycle);
         }
 
