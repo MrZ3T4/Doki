@@ -6,4 +6,23 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="TabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:elevation">0dp</item>
+        <item name="android:background">@drawable/tab_divider</item>
+        <item name="tabUnboundedRipple">true</item>
+        <item name="tabIndicator">@drawable/tab_indicator_corner</item>
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabTextAppearance">@style/TabTextAppearence</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabGravity">fill</item>
+
+    </style>
+
+    <style name="TabTextAppearence" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
 </resources>
