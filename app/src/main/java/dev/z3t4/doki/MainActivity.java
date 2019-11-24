@@ -10,7 +10,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.z3t4.doki.Adapter.MainViewPager;
-import dev.z3t4.doki.R;
 
 public class MainActivity extends AppCompatActivity {
 
