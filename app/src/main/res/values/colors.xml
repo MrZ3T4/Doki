@@ -6,6 +6,8 @@
 
     <color name="background">#FFFFFF</color>
 
+    <color name="card_divider">#CCE6E6E6</color>
+
     <color name="bottom_tab_color_inactive">#5f6368</color>
 
     <color name="appbar_bottom_tab_color">#FFFFFF</color>

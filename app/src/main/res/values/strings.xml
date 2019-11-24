@@ -13,5 +13,9 @@
 
     <string name="dot">&#8226;</string>
 
+    <string name="example">This is an example</string>
+    <string name="example_content">This is an example: The local news desk published a polemic article on the homeless.</string>
+
+    <string name="header">" publicó una noticia el " </string>
 
 </resources>

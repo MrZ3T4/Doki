@@ -6,6 +6,8 @@
 
     <color name="background">#121212</color>
 
+    <color name="card_divider">@android:color/transparent</color>
+
     <color name="bottom_tab_color_inactive">#9aa0a6</color>
 
     <color name="appbar_bottom_tab_color">#222326</color>
