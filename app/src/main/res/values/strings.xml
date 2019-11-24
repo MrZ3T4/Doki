@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Doki</string>
+
+    <string name="menu_anime">Anime</string>
+    <string name="menu_manga">Manga</string>
+    <string name="menu_news">Noticias</string>
+    <string name="menu_library">Biblioteca</string>
+
+    <string name="dot">&#8226;</string>
+
+
+</resources>
