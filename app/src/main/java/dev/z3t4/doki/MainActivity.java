@@ -26,9 +26,32 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mainViewPager.setupViewPager(viewPager, getSupportFragmentManager(), getLifecycle());
+        viewPager.registerOnPageChangeCallback(callback);
+
         setupBottomNavigationView();
 
     }
+
+    private ViewPager2.OnPageChangeCallback callback = new ViewPager2.OnPageChangeCallback() {
+        @Override
+        public void onPageSelected(int position) {
+            super.onPageSelected(position);
+            switch (position){
+                case 0:
+                    bottom_nav_view.setSelectedItemId(R.id.anime);
+                    break;
+                case 1:
+                    bottom_nav_view.setSelectedItemId(R.id.manga);
+                    break;
+                case 2:
+                    bottom_nav_view.setSelectedItemId(R.id.news);
+                    break;
+                case 3:
+                    bottom_nav_view.setSelectedItemId(R.id.library);
+                    break;
+            }
+        }
+    };
 
     private void setupBottomNavigationView() {
         bottom_nav_view.setOnNavigationItemSelectedListener(menuItem -> {
