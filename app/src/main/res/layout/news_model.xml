@@ -13,6 +13,7 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
+    android:longClickable="true"
     android:foreground="@drawable/ripple"
     app:cardElevation="0dp"
     app:cardBackgroundColor="@color/appbar_bottom_tab_color">

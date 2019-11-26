@@ -2,16 +2,18 @@ package dev.z3t4.doki.Adapter;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -22,6 +24,7 @@ import dev.z3t4.doki.ParallaxEffect.ParallaxViewHolder;
 import dev.z3t4.doki.Pojo.NewsPojo;
 import dev.z3t4.doki.R;
 import dev.z3t4.doki.Utils.DateManager;
+import dev.z3t4.doki.Utils.Preview;
 import dev.z3t4.doki.Utils.Thumbnails;
 import saschpe.android.customtabs.CustomTabsHelper;
 import saschpe.android.customtabs.WebViewFallback;
@@ -34,6 +37,7 @@ import static dev.z3t4.doki.Utils.Constants.anmo_logo;
 import static dev.z3t4.doki.Utils.Constants.crunchy_logo;
 import static dev.z3t4.doki.Utils.Constants.kudasai_logo;
 import static dev.z3t4.doki.Utils.Constants.rp2_logo;
+import static dev.z3t4.doki.Utils.Constants.twitter;
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {

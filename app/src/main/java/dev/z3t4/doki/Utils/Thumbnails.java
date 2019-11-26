@@ -2,11 +2,17 @@ package dev.z3t4.doki.Utils;
 
 import android.view.View;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import dev.z3t4.doki.ParallaxEffect.ParallaxImageView;
 
+import static dev.z3t4.doki.Utils.Constants.broadcast;
+import static dev.z3t4.doki.Utils.Constants.directory;
+import static dev.z3t4.doki.Utils.Constants.directoryTag;
+import static dev.z3t4.doki.Utils.Constants.newsTag;
 import static dev.z3t4.doki.Utils.Constants.twitter;
 
 public class Thumbnails {
@@ -77,13 +83,44 @@ public class Thumbnails {
                 .load(url)
                 .resize(600,400)
                 .centerCrop()
+                .tag(newsTag)
                 .into(imageView);
     }
 
     public static void PicassoCircle(String url, CircleImageView imageView){
         Picasso.get()
                 .load(url)
+                .tag(newsTag)
                 .into(imageView);
+    }
+
+    public static void PicassoDirectory(String url, AppCompatImageView imageView){
+        Picasso.get()
+                .load(url)
+                .tag(directoryTag)
+                .into(imageView);
+    }
+
+    public static void PauseRequest(int request){
+        switch (request){
+            case 1:
+                Picasso.get().pauseTag(newsTag);
+                break;
+            case 2:
+                Picasso.get().pauseTag(directoryTag);
+                break;
+        }
+    }
+
+    public static void ResumeRequest(int request){
+        switch (request){
+            case 1:
+                Picasso.get().resumeTag(newsTag);
+                break;
+            case 2:
+                Picasso.get().resumeTag(directoryTag);
+                break;
+        }
     }
 
 }

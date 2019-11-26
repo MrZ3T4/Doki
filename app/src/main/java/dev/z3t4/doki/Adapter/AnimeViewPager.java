@@ -1,6 +1,10 @@
 package dev.z3t4.doki.Adapter;
 
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
@@ -9,14 +13,12 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
-import dev.z3t4.doki.ui.AnimeFragment;
+import dev.z3t4.doki.R;
+import dev.z3t4.doki.Utils.GenericContext;
 import dev.z3t4.doki.ui.BroadcastFragment;
 import dev.z3t4.doki.ui.CalendarFragment;
 import dev.z3t4.doki.ui.DirectoryFragment;
 import dev.z3t4.doki.ui.HistoryFragment;
-import dev.z3t4.doki.ui.LibraryFragment;
-import dev.z3t4.doki.ui.MangaFragment;
-import dev.z3t4.doki.ui.NewsFragment;
 
 public class AnimeViewPager {
 

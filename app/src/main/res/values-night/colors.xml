@@ -13,4 +13,6 @@
     <color name="appbar_bottom_tab_color">#222326</color>
     <color name="divider">#4D404040</color>
 
+    <color name="icon">#BDBDBE</color>
+
 </resources>

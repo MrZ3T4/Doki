@@ -2,12 +2,16 @@ package dev.z3t4.doki.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -18,6 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.z3t4.doki.Adapter.AnimeViewPager;
 import dev.z3t4.doki.R;
+import dev.z3t4.doki.Utils.GenericContext;
 
 import static dev.z3t4.doki.Utils.Constants.broadcast;
 import static dev.z3t4.doki.Utils.Constants.calendar;
@@ -60,4 +65,5 @@ public class AnimeFragment extends Fragment {
 
         return view;
     }
+
 }

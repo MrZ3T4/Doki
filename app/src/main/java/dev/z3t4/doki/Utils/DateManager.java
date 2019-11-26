@@ -30,13 +30,13 @@ public class DateManager {
             case "Mon":
                 day = "Lunes";
                 break;
-            case "Thu":
+            case "Tue":
                 day = "Martes";
                 break;
             case "Wed":
                 day = "Miércoles";
                 break;
-            case "Tue":
+            case "Thu":
                 day = "Jueves";
                 break;
             case "Fri":

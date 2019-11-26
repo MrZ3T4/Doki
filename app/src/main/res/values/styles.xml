@@ -1,2 +1,12 @@
 <resources>
+
+        <style name="PauseDialog" parent="Theme.AppCompat.Dialog">
+            <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        </style>
+
+        <style name="PauseDialogAnimation">
+            <item name="android:windowEnterAnimation">@anim/alpha_in</item>
+            <item name="android:windowExitAnimation">@anim/alpha_out</item>
+        </style>
+
 </resources>

@@ -1,5 +1,7 @@
 package dev.z3t4.doki.Utils;
 
+import java.util.Objects;
+
 import dev.z3t4.doki.R;
 
 public class Constants {
@@ -8,6 +10,19 @@ public class Constants {
     public static String history = GenericContext.getContext().getResources().getString(R.string.history);
     public static String calendar = GenericContext.getContext().getResources().getString(R.string.calendar);
     public static String directory = GenericContext.getContext().getResources().getString(R.string.directory);
+
+    public static final String animeflv_tv = "AnimeFLV/directory_tv.json";
+    public static final String animeflv_movies = "AnimeFLV/directory_movies.json";
+    public static final String animeflv_ova = "AnimeFLV/directory_ova.json";
+    public static final String animeflv_special = "AnimeFLV/directory_special.json";
+
+    public static final String special = "Especial";
+    public static final String ova = "OVA";
+    public static final String tv = "Anime";
+    public static final String movie = "Película";
+
+    public static final Object directoryTag = new Object();
+    public static final Object newsTag = new Object();
 
 
     public static final String SRC_KUDASAI = "https://somoskudasai.com/feed";

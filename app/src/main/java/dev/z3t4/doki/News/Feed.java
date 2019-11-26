@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.ProgressBar;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -36,9 +38,13 @@ public class Feed extends AsyncTask<Void,Void,Void> {
     private SortBy sortBy = new SortBy();
     private ArrayList<NewsPojo> newsPojoArrayList = new ArrayList<>();
 
-    public Feed(Context context, ParallaxRecyclerView recyclerView) {
+    @SuppressLint("StaticFieldLeak")
+    private ProgressBar progressBar;
+
+    public Feed(Context context, ParallaxRecyclerView recyclerView, ProgressBar progressBar) {
         this.context = context;
         this.recyclerView = recyclerView;
+        this.progressBar = progressBar;
     }
 
     @Override
@@ -68,6 +74,8 @@ public class Feed extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
+        progressBar.setVisibility(View.GONE);
+
         sortBy.getArrayListByDate(newsPojoArrayList);
 
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
@@ -79,6 +87,24 @@ public class Feed extends AsyncTask<Void,Void,Void> {
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         recyclerView.setAdapter(adapter);
+        recyclerView.getViewTreeObserver().addOnPreDrawListener(
+                new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        recyclerView.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                        for (int i = 0; i < recyclerView.getChildCount(); i++) {
+                            View v = recyclerView.getChildAt(i);
+                            v.setAlpha(0.0f);
+                            v.animate().alpha(1.0f)
+                                    .setDuration(300)
+                                    .setStartDelay(i * 50)
+                                    .start();
+                        }
+
+                        return true;
+                    }
+                });
         recyclerView.addItemDecoration(new CustomItemDecorator(60));
 
     }

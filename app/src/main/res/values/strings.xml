@@ -1,10 +1,20 @@
 <resources>
     <string name="app_name">Doki</string>
 
-    <string name="menu_anime">Anime</string>
+    <string name="menu_anime">Inicio</string>
     <string name="menu_manga">Manga</string>
     <string name="menu_news">Noticias</string>
     <string name="menu_library">Biblioteca</string>
+
+    <string name="settings">Configuración</string>
+    <string name="sort">Ordenar por</string>
+    <string name="type">Tipo</string>
+
+    <string name="tv">Series</string>
+    <string name="movies">Películas</string>
+    <string name="ova">OVA</string>
+    <string name="special">Especiales</string>
+    <string name="all">Todo</string>
 
     <string name="broadcast">En emisión</string>
     <string name="history">Mi historial</string>
