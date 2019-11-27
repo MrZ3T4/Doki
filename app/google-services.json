@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "805378992039",
+    "firebase_url": "https://z3t4-doki.firebaseio.com",
+    "project_id": "z3t4-doki",
+    "storage_bucket": "z3t4-doki.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805378992039:android:fafceca8b1fbb753657882",
+        "android_client_info": {
+          "package_name": "dev.z3t4.doki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805378992039-u3c2bh1nnge6j62b4ln2qgh58532gftl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.z3t4.doki",
+            "certificate_hash": "36214ca0f8dd9ee5471d72c43fa3ec4f36ba3398"
+          }
+        },
+        {
+          "client_id": "805378992039-l6gndr9jc7r77233ufliu30leqdtflng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv9D-3dEhCqxXPGpBjWd3A0x2G6Tx6N6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805378992039-l6gndr9jc7r77233ufliu30leqdtflng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
